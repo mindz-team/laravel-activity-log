@@ -1,0 +1,26 @@
+{
+    "name": "mindz-team/laravel-activity-log",
+    "description": "Package allows to collect desired information about user activities and store them into database. It also provides set of tools to filter activities for presentation purposes.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "roman.szymanski",
+            "email": "r.szymanski@mindz.pl"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mindz\\LaravelActivityLog\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mindz\\LaravelActivityLog\\LaravelActivityLogServiceProvider"
+            ]
+        }
+    }
+}
