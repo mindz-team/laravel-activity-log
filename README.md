@@ -20,7 +20,7 @@ And run
 
 Publish migration file
 
-    php artisan vendor:publish --provider="Mindz\LaravelActivityLog\LaravelActivityLogServiceProvider" --tag="config"
+    php artisan vendor:publish --provider="Mindz\LaravelActivityLog\LaravelActivityLogServiceProvider" --tag="migrations"
 
 Run 
 
