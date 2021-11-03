@@ -5,6 +5,7 @@ namespace Mindz\LaravelActivityLog\Traits;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\App;
 use Mindz\LaravelActivityLog\Helpers\ArrayDiffMultidimensional;
 use Mindz\LaravelActivityLog\Models\Activity;
 
@@ -14,6 +15,10 @@ trait LogActivity
 
     public static function bootLogActivity()
     {
+        if (App::environment('testing')) {
+            return;
+        }
+
         static::saving(function (Model $model) {
             $changes = array_merge($model->getAttributes(), $model->getRawOriginal());
             $originalModel = $model->replicate()->setRawAttributes($changes);
